@@ -1,7 +1,7 @@
 <?php
 header('Content-Type:text/html; charset=UTF-8');
 ?>
-<div class='add-admin-wrapper'>
+<div class='edit-area'>
     <form id='add-admin' class='add-admin'>
         <button type='button' class='close btn-default' id='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
         <h3 class='admin-msg'>新增管理员</h3>

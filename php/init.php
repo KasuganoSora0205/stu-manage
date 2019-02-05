@@ -17,5 +17,4 @@ if($_SESSION!=NULL){
 }else{
     $arr = array('url'=>'http://127.0.0.1/student_item/view/login.html');
     echo(json_encode($arr));
-    // echo ('http://127.0.0.1/student_item/view/login.html');
 }

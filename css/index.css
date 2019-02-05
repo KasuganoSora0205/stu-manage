@@ -99,7 +99,6 @@ input[type=text]{
     background-color: rgb(45, 77, 107);
 }
 
-
 .content{
     margin-left: 250px;
     height: 100%;
@@ -107,13 +106,10 @@ input[type=text]{
     overflow: hidden;
     overflow-y: auto;
 }
-
-.list-table .btn-default,
-.control-table .btn-default{
+table .btn-default{
     height: 30px;
 }
-.list-table,
-.control-table{
+table{
     border: 1px solid #ddd;
     text-align: center;
     width: 100%;
@@ -139,24 +135,19 @@ input[type=text]{
 
 }
 
-.list-table th,
-.list-table tr,
-.control-table th,
-.control-table tr{
+table th,table tr{
     text-align: center;
     height: 50px;
     line-height: 50px;
 }
 .list-table input[type=button]{
-    width: 40%!important;
+    width: 40%;
 }
 .control-table input[type=button]{
-    width: 30%!important;
+    width: 30%;
 }
 
-.edit-wrapper,
-.change-wrapper,
-.add-admin-wrapper{
+.edit-area{
     position: fixed;
     top: 0;
     left: 0;
@@ -193,24 +184,19 @@ h3{
     width: 100%;
     height: 50px;
 }
-.edit-wrapper label,
-.add-stu label,
-.change-wrapper label,
-.add-admin-wrapper label{
+.edit-area label,
+.add-stu label{
     display: inline-block;
     width: 80px;
     height: 50px;
     line-height: 50px;
     text-align: right;
     margin-right: 30px;
-
 }
 .msg-input{
     display: inline-block;
 }
-.edit-wrapper input[type=button],
-.change-wrapper input[type=button],
-.add-admin-wrapper input[type=button]{
+.edit-area input[type=button]{
     width: 100px;
 }
 .btn-group{
@@ -229,7 +215,7 @@ h3{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 500px;
+    width: 550px;
     height: 500px;
 }
 #add .btn-group .btn-default{
@@ -393,4 +379,10 @@ textarea{
 .admin-pwd-btn{
     width: 100px;
     flex-grow: 1;
+}
+.form-group img{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    display: none;
 }

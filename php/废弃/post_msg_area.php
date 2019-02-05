@@ -1,6 +1,7 @@
 <?php
 header('Content-Type:text/html;charset=utf-8');
-echo "<div class='change-wrapper'>
+?>
+<div class='change-wrapper'>
 <form id='admin_msg' class='change'>
     <button type='button' class='close btn-default' id='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
     <textarea ></textarea>
@@ -10,4 +11,4 @@ echo "<div class='change-wrapper'>
         </div>
     </div>
 </form>
-</div>";
+</div>

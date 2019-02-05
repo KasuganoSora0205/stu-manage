@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS student_management;
 CREATE DATABASE student_management CHARSET=UTF8;
 USE student_management;
 CREATE TABLE student(
-    stu_num INT(10),
+    stu_num INT(10) PRIMARY KEY,
     name VARCHAR(8),
     sex VARCHAR(2),
     mail VARCHAR(32),
@@ -53,14 +53,7 @@ CREATE TABLE admin_msg(
 );
 INSERT INTO admin_msg VALUES(
     NULL,
-    '请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque quia.请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque qu请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque qu请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque qu请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque qu',
-    'admin2',
-    '2019/2/1 下午7:07:58',
-    FALSE
-);
-INSERT INTO admin_msg VALUES(
-    NULL,
-    '请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque quia.',
+    '测试信息,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque quia.请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque qu请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque qu请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque qu请及时提交项目代码,Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ad perspiciatis nobis maiores tempora sapiente molestiae nisi, maxime quaerat cumque at dolorum enim quo eveniet modi aut alias, doloremque qu',
     'admin2',
     '2019/2/1 下午7:07:58',
     FALSE
@@ -73,7 +66,7 @@ CREATE TABLE log(
 );
 INSERT INTO log VALUES(
     'admin',
-    '修改了学号为 1505010106 的学生信息',
+    '测试信息',
     '2019/2/1 下午7:07:58'
 );
 

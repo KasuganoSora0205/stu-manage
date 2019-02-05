@@ -23,5 +23,5 @@ if($result){
         '$logDate')";
     $re = mysqli_query($conn,$sql);
 }else{
-    echo $sql;
+    echo 'error';
 }
