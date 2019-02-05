@@ -15,6 +15,6 @@ if($_SESSION!=NULL){
     $arr = array('avatar'=>$row['avatar'],'msgNum'=>$rows);
     echo(json_encode($arr));
 }else{
-    $arr = array('url'=>'http://127.0.0.1/student_item/view/login.html');
+    $arr = array('url'=>'../view/login.html');
     echo(json_encode($arr));
 }

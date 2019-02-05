@@ -6,7 +6,7 @@ inputMsg[2].addEventListener('click',()=>{
         }else if(data == 0){
             alert('密码错误')
         }else{
-            location.href = 'http://127.0.0.1/student_item/view/student_manager.html';
+            location.href = '../view/student_manager.html';
             
         }
     })

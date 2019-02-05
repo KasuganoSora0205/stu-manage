@@ -828,10 +828,9 @@ $('.log-select').click(function () {
 })
 //全屏
 $('.fullscreen').click(function () {
-    let el = document.documentElement;
-    let rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
-    if (typeof rfs != "undefined" && rfs) {
-        rfs.call(el);
-    };
-    return;
+    if(document.webkitIsFullScreen){
+        document.webkitCancelFullScreen()
+    }else{
+        document.documentElement.webkitRequestFullScreen()
+    }
 })
