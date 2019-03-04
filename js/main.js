@@ -269,9 +269,9 @@ init.control = () => {
                     <td>${item['department']}</td>
                     <td>${item['email']}</td>
                     <td class='lastlogintime'>${item['lastlogintime']}</td>
-                    <td><input class='changebtn btn-default' index='${index}' aid='${item['aid']}' type='button' value='修改'>
-                    <input class='del-admin btn-default' index='${index}' aid='${item['aid']}' type='button' value='删除'>
-                    <input class='post-msg btn-default' index='${index}' aid='${item['aid']}' type='button' value='发送消息'></tr>`).join('')}
+                    <td><input class='changebtn btn-default' data-index='${index}' data-aid='${item['aid']}' type='button' value='修改'>
+                    <input class='del-admin btn-default' data-index='${index}' data-aid='${item['aid']}' type='button' value='删除'>
+                    <input class='post-msg btn-default' data-index='${index}' data-aid='${item['aid']}' type='button' value='发送消息'></tr>`).join('')}
                     </tbody>
                 </table>
                 <div class='edit-area'></div>
@@ -289,11 +289,11 @@ init.control = () => {
     })
 }
 init.adminChange = function (msg) {
-    let thisMsg = msg[$(this).attr('index')]
+    let thisMsg = msg[$(this).attr('data-index')]
     $.ajax({
         type: 'get',
         data: {
-            aid: $(this).attr('aid'),
+            aid: $(this).attr('data-aid'),
             logDate: new Date().toLocaleString()
         },
         url: '../php/admin_change_area.php',
@@ -317,7 +317,7 @@ init.adminChange = function (msg) {
                 <div class='form-group'>
                     <label for='change_authority' class='change-label'>权限等级:</label>
                     <div class='msg-input'>
-                        <input type='text' ${thisMsg['authority'] == 0 ? 'disabled' : ''} value='${thisMsg['authority']}' name='authority' class='form-change' id='change_authority' placeholder='权限等级0~2，从高到低'>
+                        <input type='text' ${thisMsg['authority'] == 0 ? 'readonly' : ''} value='${thisMsg['authority']}' name='authority' class='form-change' id='change_authority' placeholder='权限等级0~2，从高到低'>
                     </div>
                 </div>
                 <div class='form-group'>
@@ -385,7 +385,7 @@ init.delAdmin = function (msg) {
     $.ajax({
         type: 'post',
         data: {
-            aid: $(this).attr('aid'),
+            aid: $(this).attr('data-aid'),
             logDate: new Date().toLocaleString()
         },
         url: '../php/delete_admin.php',
@@ -401,7 +401,7 @@ init.delAdmin = function (msg) {
     })
 }
 init.postMsg = function (msg) {
-    let to = msg[$(this).attr('index')]['name'];
+    let to = msg[$(this).attr('data-index')]['name'];
     $('.edit-area').html(`<div class='edit-area'>
     <form id='admin_msg' class='change'>
         <button type='button' class='close btn-default' id='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -505,8 +505,8 @@ init.stuMsg = function () {
                         <td>${item['age']}</td>
                         <td>${item['tel']}</td>
                         <td>${item['address']}</td>
-                        <td><input class='editBtn btn btn-default' index='${index}' type='button' value='编辑'>
-                        <input class='deleteBtn btn btn-default' index='${index}' type='button' value='删除'></tr>`).join('') : ''}
+                        <td><input class='editBtn btn btn-default' data-index='${index}' type='button' value='编辑'>
+                        <input class='deleteBtn btn btn-default' data-index='${index}' type='button' value='删除'></tr>`).join('') : ''}
                     </tbody>
                 </table>
                 <div class='edit-area'></div>
@@ -518,7 +518,7 @@ init.stuMsg = function () {
 }
 init.stuMsgEdit = function (msg) {
     $('.list-wrapper').on('click', '.editBtn', function () {
-        let thisStudent = msg[$(this).attr('index')];
+        let thisStudent = msg[$(this).attr('data-index')];
         $('.edit-area').html(`<div class='edit-wrapper'>
         <form id='msg' class='edit'>
             <button type='button' class='close btn-default' id='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -596,7 +596,7 @@ init.delStu = function (msg) {
     $('.list-wrapper').on('click', '.deleteBtn', function () {
         let flag = confirm('确定要删除学生信息吗？');
         if (flag) {
-            let data = msg[$(this).attr('index')].stu_num;
+            let data = msg[$(this).attr('data-index')].stu_num;
             $.post('../php/stu_del.php', { stu_num: data, logDate: new Date().toLocaleString() }, () => {
                 $(this).parent().parent().remove();
             })
