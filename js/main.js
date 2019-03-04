@@ -15,6 +15,18 @@ const init = {
     readed: null,
     stuMsgReg: null,
 }
+//正则
+const reg = {
+    flag: false,
+    num: /^\d{10}$/,
+    name: /^[\u4E00-\u9FA5]{2,10}$/,
+    mail: /@/,
+    age: /^\d{2}$/,
+    tel: /^1[3456789]\d{9}$/,
+    msg: /[\'\"]/g,
+    authority: /^[012]$/,
+    special: /[`~!#$%^&*()\-+=<>?:"{}|,.\/;\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/img
+}
 //菜单
 init.menuload = function (context, callback) {
     if ($(context).hasClass('active')) {
@@ -771,18 +783,6 @@ init.stuMsgReg = function () {
         }
     })
     return flag;
-}
-//正则
-const reg = {
-    flag: false,
-    num: /^\d{10}$/,
-    name: /^[\u4E00-\u9FA5]{2,10}$/,
-    mail: /@/,
-    age: /^\d{2}$/,
-    tel: /^1[3456789]\d{9}$/,
-    msg: /[\'\"]/g,
-    authority: /^[012]$/,
-    special: /[`~!#$%^&*()\-+=<>?:"{}|,.\/;\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/img
 }
 //判断登录状态,初始化首页
 $.get('../php/init.php', null, function (data) {
